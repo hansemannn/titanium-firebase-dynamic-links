@@ -9,70 +9,55 @@
 
 package ti.firebasedynamiclinks
 
-import org.appcelerator.kroll.KrollModule
+import android.net.Uri
+
+import com.google.firebase.dynamiclinks.FirebaseDynamicLinks
+
 import org.appcelerator.kroll.KrollDict
+import org.appcelerator.kroll.KrollFunction
+import org.appcelerator.kroll.KrollModule
 import org.appcelerator.kroll.annotations.Kroll
 import org.appcelerator.kroll.common.Log
-import org.appcelerator.kroll.common.TiConfig
 import org.appcelerator.titanium.TiApplication
+
 
 @Kroll.module(name = "TitaniumFirebaseDynamicLinks", id = "ti.firebasedynamiclinks")
 class TitaniumFirebaseDynamicLinksModule: KrollModule() {
 
-	// NOTE: You can develop Titanium Android modules in Android Studio. Follow these three steps:
-	//   1. Build the empty module
-	//   2. Drag the "build" folder into Android Studio
-	//   3. Start developing! All dependencies and code completions are supported!
-
 	companion object {
-		// Standard Debugging variables
 		private const val LCAT = "TitaniumFirebaseDynamicLinksModule"
-		private val DBG = TiConfig.LOGD
-		
-		// You can define constants with @Kroll.constant, for example:
-		// @Kroll.constant private val EXTERNAL_NAME = "EXTERNAL_NAME"
-
-		@Kroll.onAppCreate
-		fun onAppCreate(app: TiApplication?) {
-			Log.d(LCAT, "inside onAppCreate")
-			// put module init code that needs to run when the application is created
-		}
 	}
-
-	// Methods
 
 	@Kroll.method
-	fun example(): String {
-		Log.d(LCAT, "example() called")
-		return "hello world"
+	fun handleDeepLink(callback: KrollFunction) {
+		val currentActivity = TiApplication.getInstance().rootOrCurrentActivity
+
+		FirebaseDynamicLinks.getInstance()
+			.getDynamicLink(currentActivity.intent)
+			.addOnSuccessListener(currentActivity) { pendingDynamicLinkData ->
+				val event = KrollDict()
+
+				// Get deep link from result (may be null if no link is found)
+				var deepLink: Uri?
+				if (pendingDynamicLinkData != null) {
+					deepLink = pendingDynamicLinkData.link
+					event["success"] = true
+					event["deepLink"] = deepLink.toString()
+				} else{
+					event["success"] = false
+					event["error"] = "No deep link found"
+				}
+
+				callback.callAsync(krollObject, event)
+			}
+			.addOnFailureListener(currentActivity) { e ->
+				Log.e(LCAT, "getDynamicLink:onFailure", e)
+
+				val event = KrollDict()
+				event["success"] = false
+				event["error"] = e.localizedMessage
+
+				callback.callAsync(krollObject, event)
+			}
 	}
-	
-	@Kroll.method
-	fun testMethod(params: KrollDict) {
-		Log.d(LCAT, "testMethod() called")
-
-		// Access the parameters passed as an Object, e.g. "myModule.testMethod({ name: 'John Doe', flag: true })"
-		val name = params.getString("name")
-		val flag = params.optBoolean("flag", false)
-
-		// Fire an event that can be added via "myModule.addEventListener('shown', ...)"
-		val event = KrollDict()
-		event["name"] = name
-		event["flag"] = flag
-
-		fireEvent("", event)
-	}
-
-	// Properties
-
-	@get:Kroll.getProperty
-	@set:Kroll.setProperty
-	var exampleProp: String
-		get() {
-			Log.d(LCAT, "get example property")
-			return "hello world"
-		}
-		set(value) {
-			Log.d(LCAT, "set example property: $value")
-		}
 }
