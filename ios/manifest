@@ -1,0 +1,19 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 2
+architectures: arm64 x86_64
+mac: false
+description: titanium-firebase-dynamic-links
+author: Hans Knöchel
+license: MIT
+copyright: Copyright (c) 2021 by Hans Knöchel
+
+# these should not be edited
+name: titanium-firebase-dynamic-links
+moduleid: ti.firebasedynamiclinks
+guid: 694c1765-74aa-466d-9a06-d013f506f88f
+platform: iphone
+minsdk: 9.2.0
