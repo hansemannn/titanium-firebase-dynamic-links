@@ -33,3 +33,4 @@ nbproject
 /ios/dist
 /ios/Carthage
 android/.gradle
+/ios/Pods

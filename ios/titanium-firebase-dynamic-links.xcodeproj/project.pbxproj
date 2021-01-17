@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3A112F8F25AB1778002776E6 /* FirebaseDynamicLinks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A112F8E25AB1778002776E6 /* FirebaseDynamicLinks.framework */; };
 		3A112F9F25AB180F002776E6 /* GoogleAppMeasurement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A112F9425AB180F002776E6 /* GoogleAppMeasurement.framework */; };
 		3A112FA025AB180F002776E6 /* FirebaseInstallations.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A112F9525AB180F002776E6 /* FirebaseInstallations.framework */; };
 		3A112FA125AB180F002776E6 /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A112F9625AB180F002776E6 /* Protobuf.framework */; };
@@ -21,6 +20,7 @@
 		3A112FA925AB180F002776E6 /* FirebaseInstanceID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A112F9E25AB180F002776E6 /* FirebaseInstanceID.framework */; };
 		3A112FAE25AB183A002776E6 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A112FAD25AB183A002776E6 /* StoreKit.framework */; };
 		3A112FB025AB1843002776E6 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A112FAF25AB1843002776E6 /* libsqlite3.tbd */; };
+		3A60AF8925B47D920053FCEF /* FirebaseDynamicLinks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A60AF8825B47D920053FCEF /* FirebaseDynamicLinks.framework */; };
 		B1E00E65241D179500C384C1 /* TitaniumKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = B1E00E64241D179500C384C1 /* TitaniumKit.xcframework */; };
 		DB34CDE0207B998A005F8E8C /* TiFirebasedynamiclinksModuleAssets.m in Sources */ = {isa = PBXBuildFile; fileRef = DB34CDDE207B998A005F8E8C /* TiFirebasedynamiclinksModuleAssets.m */; };
 		DB34CDE1207B998A005F8E8C /* TiFirebasedynamiclinksModuleAssets.h in Headers */ = {isa = PBXBuildFile; fileRef = DB34CDDF207B998A005F8E8C /* TiFirebasedynamiclinksModuleAssets.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -31,7 +31,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3A112F8E25AB1778002776E6 /* FirebaseDynamicLinks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDynamicLinks.framework; path = platform/FirebaseDynamicLinks.framework; sourceTree = "<group>"; };
 		3A112F9425AB180F002776E6 /* GoogleAppMeasurement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleAppMeasurement.framework; path = _shared/GoogleAppMeasurement.framework; sourceTree = "<group>"; };
 		3A112F9525AB180F002776E6 /* FirebaseInstallations.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstallations.framework; path = _shared/FirebaseInstallations.framework; sourceTree = "<group>"; };
 		3A112F9625AB180F002776E6 /* Protobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Protobuf.framework; path = _shared/Protobuf.framework; sourceTree = "<group>"; };
@@ -45,6 +44,7 @@
 		3A112F9E25AB180F002776E6 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = _shared/FirebaseInstanceID.framework; sourceTree = "<group>"; };
 		3A112FAD25AB183A002776E6 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3A112FAF25AB1843002776E6 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		3A60AF8825B47D920053FCEF /* FirebaseDynamicLinks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDynamicLinks.framework; path = platform/FirebaseDynamicLinks.framework; sourceTree = "<group>"; };
 		B1E00E64241D179500C384C1 /* TitaniumKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = TitaniumKit.xcframework; path = "$(TITANIUM_SDK)/iphone/Frameworks/TitaniumKit.xcframework"; sourceTree = "<group>"; };
 		DB34CDDE207B998A005F8E8C /* TiFirebasedynamiclinksModuleAssets.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TiFirebasedynamiclinksModuleAssets.m; path = Classes/TiFirebasedynamiclinksModuleAssets.m; sourceTree = SOURCE_ROOT; };
 		DB34CDDF207B998A005F8E8C /* TiFirebasedynamiclinksModuleAssets.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TiFirebasedynamiclinksModuleAssets.h; path = Classes/TiFirebasedynamiclinksModuleAssets.h; sourceTree = SOURCE_ROOT; };
@@ -63,11 +63,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A112FB025AB1843002776E6 /* libsqlite3.tbd in Frameworks */,
+				3A60AF8925B47D920053FCEF /* FirebaseDynamicLinks.framework in Frameworks */,
 				3A112FAE25AB183A002776E6 /* StoreKit.framework in Frameworks */,
 				DB34CDE6207B9EBD005F8E8C /* Foundation.framework in Frameworks */,
 				3A112FA025AB180F002776E6 /* FirebaseInstallations.framework in Frameworks */,
 				3A112FA425AB180F002776E6 /* PromisesObjC.framework in Frameworks */,
-				3A112F8F25AB1778002776E6 /* FirebaseDynamicLinks.framework in Frameworks */,
 				3A112FA825AB180F002776E6 /* nanopb.framework in Frameworks */,
 				3A112FA625AB180F002776E6 /* Firebase.framework in Frameworks */,
 				3A112FA225AB180F002776E6 /* GoogleDataTransport.framework in Frameworks */,
@@ -121,7 +121,7 @@
 				3A112F9D25AB180F002776E6 /* nanopb.framework */,
 				3A112F9925AB180F002776E6 /* PromisesObjC.framework */,
 				3A112F9625AB180F002776E6 /* Protobuf.framework */,
-				3A112F8E25AB1778002776E6 /* FirebaseDynamicLinks.framework */,
+				3A60AF8825B47D920053FCEF /* FirebaseDynamicLinks.framework */,
 				B1E00E64241D179500C384C1 /* TitaniumKit.xcframework */,
 				DB34CDE5207B9EBD005F8E8C /* Foundation.framework */,
 			);
